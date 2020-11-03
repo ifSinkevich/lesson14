@@ -1,6 +1,6 @@
 'use strict';
 
-const DomElement = function(height, width, bg, fontSize, selector, str, creator) {
+const DomElement = function(height, width, bg, fontSize, selector, str) {
     this.height = height;
     this.width = width;
     this.bg = bg;
@@ -38,7 +38,7 @@ const DomElement = function(height, width, bg, fontSize, selector, str, creator)
 };
 
 
-const domElement = new DomElement('500px', '500px', 'blue', '120px', '.lalala', 'hi');
+const domElement = new DomElement('500px', '500px', 'blue', '120px', '#lalala', 'hi');
 
 domElement.creator();
 
