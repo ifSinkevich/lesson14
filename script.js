@@ -1,11 +1,12 @@
 'use strict';
 
-const DomElement = function() {
-    this.height = '500px';
-    this.width ='500px';
-    this.bg = 'blue';
-    this.fontSize = '120px';
-    this.selector = '#lalala';
+const DomElement = function(height, width, bg, fontSize, selector, str, creator) {
+    this.height = height;
+    this.width = width;
+    this.bg = bg;
+    this.fontSize = fontSize;
+    this.selector = selector;
+    this.str = str;
     this.creator = function() {
 
         if (this.selector[0] === ".") {
@@ -17,7 +18,7 @@ const DomElement = function() {
                             background-color: ${this.bg};
                             font-size: ${this.fontSize};
                           `;
-          newElem.textContent = 'hi';
+          newElem.textContent = `${this.str}`;
           document.body.append(newElem);
         };
 
@@ -30,14 +31,14 @@ const DomElement = function() {
                             background-color: ${this.bg};
                             font-size: ${this.fontSize};
                           `;
-          newElem.textContent = 'hi-hi';
+          newElem.textContent = `${this.str}`;
           document.body.append(newElem);
         };        
     };
 };
 
 
-const domElement = new DomElement;
+const domElement = new DomElement('500px', '500px', 'blue', '120px', '.lalala', 'hi');
 
 domElement.creator();
 
